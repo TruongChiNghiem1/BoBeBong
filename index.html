@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e2a5e 0%, #2d1b4e 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -31,14 +31,14 @@
 
         .star {
             position: absolute;
-            background: white;
+            background: rgba(255, 255, 255, 0.6);
             border-radius: 50%;
             animation: twinkle 3s infinite;
         }
 
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         .moon {
@@ -47,9 +47,9 @@
             right: 100px;
             width: 120px;
             height: 120px;
-            background: #ffd700;
+            background: #e8b44d;
             border-radius: 50%;
-            box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 40px rgba(232, 180, 77, 0.5);
             animation: float 6s ease-in-out infinite;
         }
 
@@ -77,16 +77,16 @@
         .lantern-top {
             width: 60px;
             height: 10px;
-            background: #8b4513;
+            background: #5a3a1a;
             border-radius: 5px 5px 0 0;
         }
 
         .lantern-body {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            background: linear-gradient(135deg, #b8344a 0%, #a32f42 100%);
             border-radius: 0 0 30px 30px;
-            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 5px 20px rgba(184, 52, 74, 0.4);
             position: relative;
         }
 
@@ -94,7 +94,7 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             top: 10px;
             left: 10px;
@@ -103,7 +103,7 @@
         .lantern-string {
             width: 2px;
             height: 50px;
-            background: #8b4513;
+            background: #5a3a1a;
             position: absolute;
             top: -50px;
             left: 29px;
@@ -112,7 +112,7 @@
         .lantern-tassel {
             width: 20px;
             height: 30px;
-            background: #ffd700;
+            background: #d4a855;
             position: absolute;
             bottom: -30px;
             left: 20px;
@@ -247,12 +247,12 @@
         .box-bottom {
             width: 300px;
             height: 200px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            background: linear-gradient(135deg, #a32f42 0%, #8d2838 100%);
             border-radius: 10px;
             position: absolute;
             bottom: 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            border: 3px solid #d63447;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 3px solid #7a2330;
         }
 
         @media (max-width: 768px) {
@@ -266,19 +266,19 @@
             width: 100%;
             height: 100%;
             background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px);
+                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);
         }
 
         .box-lid {
             width: 320px;
             height: 60px;
-            background: linear-gradient(135deg, #ff8787 0%, #ff6b6b 100%);
+            background: linear-gradient(135deg, #b8344a 0%, #a32f42 100%);
             border-radius: 10px 10px 5px 5px;
             position: absolute;
             top: 40px;
             left: -10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 3px solid #d63447;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 3px solid #7a2330;
             transform-origin: bottom;
             transition: transform 1s ease;
         }
@@ -299,11 +299,11 @@
         .ribbon-v {
             width: 40px;
             height: 300px;
-            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            background: linear-gradient(90deg, #d4a855 0%, #c49647 50%, #d4a855 100%);
             position: absolute;
             left: 130px;
             top: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -317,11 +317,11 @@
         .ribbon-h {
             width: 300px;
             height: 40px;
-            background: linear-gradient(180deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            background: linear-gradient(180deg, #d4a855 0%, #c49647 50%, #d4a855 100%);
             position: absolute;
             top: 80px;
             left: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -347,9 +347,9 @@
             position: absolute;
             width: 40px;
             height: 50px;
-            background: #ffd700;
+            background: #d4a855;
             border-radius: 50% 50% 0 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .bow::before {
@@ -403,10 +403,10 @@
         .mooncake {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #d4a574 0%, #c9954d 100%);
+            background: linear-gradient(135deg, #9a7652 0%, #7d5d3f 100%);
             border-radius: 10px;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             animation: bounceIn 0.6s ease backwards;
         }
 
@@ -452,7 +452,7 @@
             transform: translate(-50%, -50%);
             width: 50px;
             height: 50px;
-            border: 2px solid rgba(139, 69, 19, 0.3);
+            border: 2px solid rgba(90, 58, 26, 0.4);
             border-radius: 5px;
         }
 
@@ -462,20 +462,20 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #8b4513;
+            color: #5a3a1a;
             font-size: 24px;
             font-weight: bold;
         }
 
         .message {
-            color: white;
+            color: #e8e8e8;
             margin-top: 30px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
@@ -492,8 +492,9 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: glow 2s ease-in-out infinite;
+            color: #f5f5f5;
         }
 
         @media (max-width: 768px) {
@@ -503,8 +504,8 @@
         }
 
         @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
         }
 
         p {
@@ -528,8 +529,8 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.9; }
         }
 
         .hearts {
@@ -560,7 +561,6 @@
             }
         }
 
-        /* Thiệp lời chúc */
         .greeting-card {
             position: fixed;
             top: 50%;
@@ -568,13 +568,13 @@
             transform: translate(-50%, -50%) scale(0);
             width: 500px;
             height: 600px;
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            background: linear-gradient(135deg, #3a3054 0%, #2d2442 100%);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
             z-index: 1000;
             opacity: 0;
             transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border: 5px solid #ff6b6b;
+            border: 5px solid #6a4d7a;
             overflow: hidden;
         }
 
@@ -584,7 +584,7 @@
                 max-width: 350px;
                 height: 70vh;
                 max-height: 550px;
-                border: 3px solid #ff6b6b;
+                border: 3px solid #6a4d7a;
             }
         }
 
@@ -594,7 +594,7 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            background: linear-gradient(135deg, #6a4d7a 0%, #5a3d6a 100%);
             padding: 30px;
             text-align: center;
             border-radius: 15px 15px 0 0;
@@ -606,7 +606,7 @@
             content: '🌕';
             position: absolute;
             font-size: 100px;
-            opacity: 0.2;
+            opacity: 0.15;
             top: -20px;
             right: -20px;
             animation: rotate 20s linear infinite;
@@ -618,10 +618,10 @@
         }
 
         .card-header h2 {
-            color: white;
+            color: #f5f5f5;
             font-size: 2.5em;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -651,7 +651,7 @@
         .card-decoration {
             position: absolute;
             font-size: 40px;
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
         .deco1 { top: 20px; left: 20px; animation: bounce 2s infinite; }
@@ -665,7 +665,7 @@
         }
 
         .card-body p {
-            color: #333;
+            color: #e0e0e0;
             font-size: 1.3em;
             line-height: 1.8;
             margin: 20px 0;
@@ -682,7 +682,7 @@
         }
 
         .card-body .highlight {
-            color: #ff6b6b;
+            color: #d4a855;
             font-weight: bold;
             font-size: 1.2em;
         }
@@ -696,7 +696,7 @@
         .card-signature {
             margin-top: 40px;
             font-size: 1.5em;
-            color: #ff6b6b;
+            color: #d4a855;
             font-style: italic;
         }
 
@@ -711,21 +711,22 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border: none;
             width: 40px;
             height: 40px;
             border-radius: 50%;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.3s;
             z-index: 10;
+            color: #333;
         }
 
         .close-card:hover {
             transform: scale(1.1) rotate(90deg);
-            background: #ff6b6b;
+            background: #6a4d7a;
             color: white;
         }
 
@@ -735,7 +736,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -748,12 +749,11 @@
             visibility: visible;
         }
 
-        /* Floating decorations */
         .float-deco {
             position: absolute;
             font-size: 30px;
             animation: floatSide 5s ease-in-out infinite;
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
         @keyframes floatSide {
@@ -772,7 +772,7 @@
 
         .cloud {
             position: absolute;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 100px;
             animation: moveCloud 30s linear infinite;
         }
@@ -789,7 +789,6 @@
     <div class="moon"></div>
     <div class="hearts" id="hearts"></div>
 
-    <!-- Đèn lồng -->
     <div class="lantern lantern1">
         <div class="lantern-string"></div>
         <div class="lantern-top"></div>
@@ -817,7 +816,6 @@
         <div class="lantern-tassel"></div>
     </div>
 
-    <!-- Thiệp lời chúc -->
     <div class="card-overlay" id="cardOverlay"></div>
     <div class="greeting-card" id="greetingCard">
         <button class="close-card" id="closeCard">×</button>
@@ -857,11 +855,9 @@
                 <div class="mooncake"></div>
             </div>
         </div>
-
     </div>
 
     <script>
-        // Tạo ngôi sao
         const starsContainer = document.getElementById('stars');
         for (let i = 0; i < 100; i++) {
             const star = document.createElement('div');
@@ -874,7 +870,6 @@
             starsContainer.appendChild(star);
         }
 
-        // Tạo mây
         const cloudsContainer = document.getElementById('clouds');
         for (let i = 0; i < 5; i++) {
             const cloud = document.createElement('div');
@@ -887,7 +882,6 @@
             cloudsContainer.appendChild(cloud);
         }
 
-        // Tạo trang trí bay
         for (let i = 0; i < 10; i++) {
             const deco = document.createElement('div');
             deco.className = 'float-deco';
@@ -900,7 +894,6 @@
             document.body.appendChild(deco);
         }
 
-        // Xử lý mở hộp quà
         const giftBox = document.getElementById('giftBox');
         const boxLid = document.getElementById('boxLid');
         const mooncakes = document.getElementById('mooncakes');
@@ -918,7 +911,6 @@
                     createFireworks();
                 }, 500);
                 
-                // Hiện thiệp lời chúc sau 1.5s
                 setTimeout(() => {
                     cardOverlay.classList.add('show');
                     greetingCard.classList.add('show');
@@ -928,7 +920,6 @@
             }
         });
 
-        // Đóng thiệp
         closeCard.addEventListener('click', function() {
             greetingCard.classList.remove('show');
             cardOverlay.classList.remove('show');
@@ -939,7 +930,6 @@
             cardOverlay.classList.remove('show');
         });
 
-        // Tạo trái tim bay
         function createHearts() {
             const heartsContainer = document.getElementById('hearts');
             const heartSymbols = ['💕', '💖', '💗', '💝', '💓', '🥑'];
@@ -958,9 +948,8 @@
             }, 500);
         }
 
-        // Tạo pháo hoa
         function createFireworks() {
-            const colors = ['#ff6b6b', '#ffd700', '#ff8787', '#ffed4e', '#fff'];
+            const colors = ['#b8344a', '#d4a855', '#a32f42', '#c49647', '#e8b44d'];
             
             setInterval(() => {
                 const x = Math.random() * window.innerWidth;
