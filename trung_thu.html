@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Trung Thu cho Bơ 🥑🌕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e2a5e 0%, #2d1b4e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            width: 120px;
+            height: 120px;
+            background: #e8b44d;
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(232, 180, 77, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .moon {
+                width: 80px;
+                height: 80px;
+                top: 30px;
+                right: 30px;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .lantern {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            animation: swing 3s ease-in-out infinite;
+        }
+
+        .lantern-top {
+            width: 60px;
+            height: 10px;
+            background: #5a3a1a;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .lantern-body {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #b8344a 0%, #a32f42 100%);
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 5px 20px rgba(184, 52, 74, 0.4);
+            position: relative;
+        }
+
+        .lantern-light {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            top: 10px;
+            left: 10px;
+        }
+
+        .lantern-string {
+            width: 2px;
+            height: 50px;
+            background: #5a3a1a;
+            position: absolute;
+            top: -50px;
+            left: 29px;
+        }
+
+        .lantern-tassel {
+            width: 20px;
+            height: 30px;
+            background: #d4a855;
+            position: absolute;
+            bottom: -30px;
+            left: 20px;
+            clip-path: polygon(50% 0%, 0% 30%, 20% 100%, 50% 80%, 80% 100%, 100% 30%);
+        }
+
+        .lantern1 {
+            top: 100px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .lantern2 {
+            top: 150px;
+            right: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .lantern3 {
+            top: 80px;
+            left: 30%;
+            animation-delay: 1s;
+        }
+
+        @media (max-width: 768px) {
+            .lantern {
+                width: 40px;
+                height: 60px;
+            }
+            
+            .lantern-top {
+                width: 40px;
+                height: 8px;
+            }
+            
+            .lantern-body {
+                width: 40px;
+                height: 45px;
+            }
+            
+            .lantern-light {
+                width: 25px;
+                height: 25px;
+                top: 8px;
+                left: 7px;
+            }
+            
+            .lantern-string {
+                height: 30px;
+                top: -30px;
+                left: 19px;
+            }
+            
+            .lantern-tassel {
+                width: 15px;
+                height: 20px;
+                bottom: -20px;
+                left: 12px;
+            }
+            
+            .lantern1 {
+                top: 60px;
+                left: 5%;
+            }
+            
+            .lantern2 {
+                top: 80px;
+                right: 5%;
+            }
+            
+            .lantern3 {
+                display: none;
+            }
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gift-box {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+
+        @media (max-width: 768px) {
+            .gift-box {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+            
+            .gift-box:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .box-bottom {
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #a32f42 0%, #8d2838 100%);
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 3px solid #7a2330;
+        }
+
+        @media (max-width: 768px) {
+            .box-bottom {
+                width: 250px;
+                height: 170px;
+            }
+        }
+
+        .box-pattern {
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);
+        }
+
+        .box-lid {
+            width: 320px;
+            height: 60px;
+            background: linear-gradient(135deg, #b8344a 0%, #a32f42 100%);
+            border-radius: 10px 10px 5px 5px;
+            position: absolute;
+            top: 40px;
+            left: -10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            border: 3px solid #7a2330;
+            transform-origin: bottom;
+            transition: transform 1s ease;
+        }
+
+        .box-lid.open {
+            transform: rotateX(-120deg);
+        }
+
+        @media (max-width: 768px) {
+            .box-lid {
+                width: 270px;
+                height: 50px;
+                top: 30px;
+                left: -10px;
+            }
+        }
+
+        .ribbon-v {
+            width: 40px;
+            height: 300px;
+            background: linear-gradient(90deg, #d4a855 0%, #c49647 50%, #d4a855 100%);
+            position: absolute;
+            left: 130px;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .ribbon-v {
+                width: 35px;
+                height: 250px;
+                left: 107px;
+            }
+        }
+
+        .ribbon-h {
+            width: 300px;
+            height: 40px;
+            background: linear-gradient(180deg, #d4a855 0%, #c49647 50%, #d4a855 100%);
+            position: absolute;
+            top: 80px;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .ribbon-h {
+                width: 250px;
+                height: 35px;
+                top: 67px;
+            }
+        }
+
+        .bow {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 20px;
+            left: 110px;
+            z-index: 10;
+        }
+
+        .bow::before,
+        .bow::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #d4a855;
+            border-radius: 50% 50% 0 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .bow::before {
+            left: 0;
+            transform: rotate(-45deg);
+        }
+
+        .bow::after {
+            right: 0;
+            transform: rotate(45deg) scaleX(-1);
+        }
+
+        @media (max-width: 768px) {
+            .bow {
+                width: 60px;
+                height: 60px;
+                top: 15px;
+                left: 95px;
+            }
+            
+            .bow::before,
+            .bow::after {
+                width: 30px;
+                height: 40px;
+            }
+        }
+
+        .mooncakes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 1s ease 0.5s;
+        }
+
+        .mooncakes.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .mooncakes {
+                gap: 15px;
+                bottom: 30px;
+            }
+        }
+
+        .mooncake {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #9a7652 0%, #7d5d3f 100%);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            animation: bounceIn 0.6s ease backwards;
+        }
+
+        .mooncake:nth-child(1) { animation-delay: 0.6s; }
+        .mooncake:nth-child(2) { animation-delay: 0.8s; }
+        .mooncake:nth-child(3) { animation-delay: 1s; }
+
+        @media (max-width: 768px) {
+            .mooncake {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .mooncake::before {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .mooncake::after {
+                font-size: 20px;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0) translateY(-100px);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1) translateY(0);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .mooncake::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(90, 58, 26, 0.4);
+            border-radius: 5px;
+        }
+
+        .mooncake::after {
+            content: '月';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #5a3a1a;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .message {
+            color: #e8e8e8;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                padding: 15px;
+                margin: 20px 15px;
+                max-width: calc(100% - 30px);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: glow 2s ease-in-out infinite;
+            color: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            p {
+                font-size: 1em;
+                line-height: 1.5;
+            }
+        }
+
+        .instruction {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.9; }
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatUp 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-600px) scale(1.2);
+            }
+        }
+
+        .greeting-card {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 500px;
+            height: 600px;
+            background: linear-gradient(135deg, #3a3054 0%, #2d2442 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 5px solid #6a4d7a;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .greeting-card {
+                width: 90%;
+                max-width: 350px;
+                height: 70vh;
+                max-height: 550px;
+                border: 3px solid #6a4d7a;
+            }
+        }
+
+        .greeting-card.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #6a4d7a 0%, #5a3d6a 100%);
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '🌕';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.15;
+            top: -20px;
+            right: -20px;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .card-header h2 {
+            color: #f5f5f5;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .card-header {
+                padding: 20px;
+            }
+            
+            .card-header h2 {
+                font-size: 1.6em;
+            }
+        }
+
+        .card-body {
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 25px 20px;
+                overflow-y: auto;
+                max-height: calc(70vh - 120px);
+            }
+        }
+
+        .card-decoration {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.2;
+        }
+
+        .deco1 { top: 20px; left: 20px; animation: bounce 2s infinite; }
+        .deco2 { top: 20px; right: 20px; animation: bounce 2s infinite 0.5s; }
+        .deco3 { bottom: 20px; left: 20px; animation: bounce 2s infinite 1s; }
+        .deco4 { bottom: 20px; right: 20px; animation: bounce 2s infinite 1.5s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-body p {
+            color: #e0e0e0;
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .card-body p {
+                font-size: 1em;
+                line-height: 1.6;
+                margin: 12px 0;
+            }
+        }
+
+        .card-body .highlight {
+            color: #d4a855;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .card-body .highlight {
+                font-size: 1.05em;
+            }
+        }
+
+        .card-signature {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #d4a855;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .card-signature {
+                margin-top: 25px;
+                font-size: 1.2em;
+            }
+        }
+
+        .close-card {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 10;
+            color: #333;
+        }
+
+        .close-card:hover {
+            transform: scale(1.1) rotate(90deg);
+            background: #6a4d7a;
+            color: white;
+        }
+
+        .card-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .card-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .float-deco {
+            position: absolute;
+            font-size: 30px;
+            animation: floatSide 5s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes floatSide {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(20px) translateY(-20px); }
+            50% { transform: translateX(0) translateY(-40px); }
+            75% { transform: translateX(-20px) translateY(-20px); }
+        }
+
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            animation: moveCloud 30s linear infinite;
+        }
+
+        @keyframes moveCloud {
+            from { left: -200px; }
+            to { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="clouds" id="clouds"></div>
+    <div class="moon"></div>
+    <div class="hearts" id="hearts"></div>
+
+    <div class="lantern lantern1">
+        <div class="lantern-string"></div>
+        <div class="lantern-top"></div>
+        <div class="lantern-body">
+            <div class="lantern-light"></div>
+        </div>
+        <div class="lantern-tassel"></div>
+    </div>
+
+    <div class="lantern lantern2">
+        <div class="lantern-string"></div>
+        <div class="lantern-top"></div>
+        <div class="lantern-body">
+            <div class="lantern-light"></div>
+        </div>
+        <div class="lantern-tassel"></div>
+    </div>
+
+    <div class="lantern lantern3">
+        <div class="lantern-string"></div>
+        <div class="lantern-top"></div>
+        <div class="lantern-body">
+            <div class="lantern-light"></div>
+        </div>
+        <div class="lantern-tassel"></div>
+    </div>
+
+    <div class="card-overlay" id="cardOverlay"></div>
+    <div class="greeting-card" id="greetingCard">
+        <button class="close-card" id="closeCard">×</button>
+        <div class="card-header">
+            <h2>🥑 Gửi Bơ Yêu Dấu 🌕</h2>
+        </div>
+        <div class="card-body">
+            <div class="card-decoration deco1">🥮</div>
+            <div class="card-decoration deco2">🏮</div>
+            <div class="card-decoration deco3">🌙</div>
+            <div class="card-decoration deco4">⭐</div>
+
+            <p>Trăng rằm tỏa sáng li ti,</p>
+            <p>Nghiệm mang hộp bánh đến biếu Bơ nì.</p>
+            <p>Ăn vào ngọt lịm đôi mi,</p>
+            <p>Biết đâu lòng Bơ cũng nghĩ tới Nghiệm tí 😳.</p>
+            <br>
+            <p class="highlight">"Trung thu này, Nghiệm gửi đến Bơ những chiếc bánh trung thu ngọt ngào nhất!"</p>
+            <p class="highlight">"Chúc Bơ luôn tươi tắn, xinh đẹp, tràn đầy năng lượng và dịu dàng như quả bơ"</p>
+
+            <p class="card-signature">- Nghiệm -</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gift-box" id="giftBox">
+            <div class="bow"></div>
+            <div class="box-lid" id="boxLid"></div>
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+            <div class="box-bottom">
+                <div class="box-pattern"></div>
+            </div>
+            <div class="mooncakes" id="mooncakes">
+                <div class="mooncake"></div>
+                <div class="mooncake"></div>
+                <div class="mooncake"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        const cloudsContainer = document.getElementById('clouds');
+        for (let i = 0; i < 5; i++) {
+            const cloud = document.createElement('div');
+            cloud.className = 'cloud';
+            cloud.style.width = (Math.random() * 100 + 80) + 'px';
+            cloud.style.height = (Math.random() * 40 + 40) + 'px';
+            cloud.style.top = Math.random() * 80 + '%';
+            cloud.style.animationDelay = Math.random() * 10 + 's';
+            cloud.style.animationDuration = (Math.random() * 20 + 20) + 's';
+            cloudsContainer.appendChild(cloud);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            const deco = document.createElement('div');
+            deco.className = 'float-deco';
+            const symbols = ['🥮', '🏮', '🌙', '⭐', '🥑', '🎋'];
+            deco.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            deco.style.left = Math.random() * 100 + '%';
+            deco.style.top = Math.random() * 100 + '%';
+            deco.style.animationDelay = Math.random() * 5 + 's';
+            deco.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(deco);
+        }
+
+        const giftBox = document.getElementById('giftBox');
+        const boxLid = document.getElementById('boxLid');
+        const mooncakes = document.getElementById('mooncakes');
+        const greetingCard = document.getElementById('greetingCard');
+        const cardOverlay = document.getElementById('cardOverlay');
+        const closeCard = document.getElementById('closeCard');
+        let isOpen = false;
+
+        giftBox.addEventListener('click', function() {
+            if (!isOpen) {
+                boxLid.classList.add('open');
+                setTimeout(() => {
+                    mooncakes.classList.add('show');
+                    createHearts();
+                    createFireworks();
+                }, 500);
+                
+                setTimeout(() => {
+                    cardOverlay.classList.add('show');
+                    greetingCard.classList.add('show');
+                }, 1500);
+                
+                isOpen = true;
+            }
+        });
+
+        closeCard.addEventListener('click', function() {
+            greetingCard.classList.remove('show');
+            cardOverlay.classList.remove('show');
+        });
+
+        cardOverlay.addEventListener('click', function() {
+            greetingCard.classList.remove('show');
+            cardOverlay.classList.remove('show');
+        });
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💓', '🥑'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                heartsContainer.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }, 500);
+        }
+
+        function createFireworks() {
+            const colors = ['#b8344a', '#d4a855', '#a32f42', '#c49647', '#e8b44d'];
+            
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight * 0.6;
+                
+                for (let i = 0; i < 30; i++) {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = x + 'px';
+                    firework.style.top = y + 'px';
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    const angle = (Math.PI * 2 * i) / 30;
+                    const velocity = 50 + Math.random() * 50;
+                    firework.style.setProperty('--x', Math.cos(angle) * velocity + 'px');
+                    firework.style.setProperty('--y', Math.sin(angle) * velocity + 'px');
+                    
+                    document.body.appendChild(firework);
+                    
+                    setTimeout(() => firework.remove(), 2000);
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
